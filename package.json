@@ -1,11 +1,4 @@
 {
-  "name": "@azure/notification-hubs",
-  "version": "1.0.0-beta.1",
-  "description": "Azure Notification Hubs SDK for JavaScript",
-  "sdk-type": "client",
-  "main": "dist/index.js",
-  "module": "dist-esm/src/index.js",
-  "browser": {},
   "//metadata": {
     "constantPaths": [
       {
@@ -14,64 +7,54 @@
       }
     ]
   },
-  "types": "types/latest/notification-hubs.d.ts",
-  "typesVersions": {
-    "<3.6": {
-      "*": [
-        "types/3.1/notification-hubs.d.ts"
-      ]
-    }
+  "_from": "@azure/notification-hubs",
+  "_id": "@azure/notification-hubs@1.0.0-beta.1",
+  "_inBundle": false,
+  "_integrity": "sha512-NF+VHsER+NVYXvrflJbWDk+80y5I25tJPuA8RgmVGo+wTMTZzBJKlNj3Kvu17s2h2kpNp8RJTAZPpIYtfTcBiA==",
+  "_location": "/@azure/notification-hubs",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "@azure/notification-hubs",
+    "name": "@azure/notification-hubs",
+    "escapedName": "@azure%2fnotification-hubs",
+    "scope": "@azure",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
   },
-  "scripts": {
-    "audit": "node ../../../common/scripts/rush-audit.js && rimraf node_modules package-lock.json && npm i --package-lock-only 2>&1 && npm audit",
-    "build:samples": "echo Obsolete",
-    "build:test": "npm run clean && tsc -p . && dev-tool run bundle",
-    "build:types": "downlevel-dts types/latest/ types/3.1/",
-    "build": "npm run build:test && api-extractor run --local && npm run build:types",
-    "check-format": "prettier --list-different --config ../../../.prettierrc.json --ignore-path ../../../.prettierignore \"src/**/*.ts\" \"test/**/*.ts\" \"*.{js,json}\"",
-    "clean": "rimraf dist dist-* temp types *.tgz *.log",
-    "execute:samples": "dev-tool samples run samples-dev",
-    "extract-api": "tsc -p . && api-extractor run --local",
-    "format": "prettier --write --config ../../../.prettierrc.json --ignore-path ../../../.prettierignore \"src/**/*.ts\" \"test/**/*.ts\" \"samples-dev/**/*.ts\" \"*.{js,json}\"",
-    "integration-test:browser": "echo skipped",
-    "integration-test:node": "nyc mocha -r esm --require source-map-support/register --reporter ../../../common/tools/mocha-multi-reporter.js --timeout 600000 --full-trace \"dist-esm/test/internal/**/*.spec.js\" \"dist-esm/test/public/**/*.spec.js\"",
-    "integration-test": "npm run integration-test:node && npm run integration-test:browser",
-    "lint:fix": "eslint README.md package.json api-extractor.json src test --ext .ts,.javascript,.js --fix --fix-type [problem,suggestion]",
-    "lint": "eslint README.md package.json api-extractor.json src test --ext .ts,.javascript,.js",
-    "pack": "npm pack 2>&1",
-    "test:browser": "npm run clean && npm run build:test && npm run integration-test:browser",
-    "test:node": "npm run clean && tsc -p . && npm run integration-test:node",
-    "test": "npm run clean && tsc -p . && npm run unit-test:node && dev-tool run bundle && npm run unit-test:browser && npm run integration-test",
-    "unit-test:browser": "echo skipped",
-    "unit-test:node": "mocha -r ts-node/register --timeout 1200000 --full-trace --exclude \"dist-esm/test/**/browser/*.spec.js\" \"dist-esm/test/internal/unit/{,!(browser)/**/}*.spec.js\" \"dist-esm/test/public/unit/{,!(browser)/**/}*.spec.js\"",
-    "unit-test": "npm run unit-test:node && npm run unit-test:browser"
-  },
-  "files": [
-    "dist/",
-    "dist-esm/src/",
-    "types/src",
-    "types/latest/",
-    "types/3.1/",
-    "README.md",
-    "LICENSE"
+  "_requiredBy": [
+    "#USER",
+    "/"
   ],
-  "repository": "github:Azure/azure-sdk-for-js",
-  "engines": {
-    "node": ">=12.0.0"
+  "_resolved": "https://registry.npmjs.org/@azure/notification-hubs/-/notification-hubs-1.0.0-beta.1.tgz",
+  "_shasum": "0d86a682f84e23b3894c9806200b835237195607",
+  "_spec": "@azure/notification-hubs",
+  "_where": "/Users/sarsingh11/Desktop/CodeBase/ADHA/backend/microservices-node/base",
+  "author": {
+    "name": "Microsoft Corporation"
   },
-  "keywords": [
-    "azure",
-    "cloud",
-    "typescript"
-  ],
-  "author": "Microsoft Corporation",
-  "license": "MIT",
+  "browser": {},
   "bugs": {
     "url": "https://github.com/Azure/azure-sdk-for-js/issues"
   },
-  "homepage": "https://github.com/Azure/azure-sdk-for-js/blob/main/sdk/notificationhubs/notification-hubs/README.md",
-  "sideEffects": false,
-  "prettier": "@azure/eslint-plugin-azure-sdk/prettier.json",
+  "bundleDependencies": false,
+  "dependencies": {
+    "@azure/abort-controller": "^1.1.0",
+    "@azure/core-amqp": "^3.1.0",
+    "@azure/core-auth": "^1.4.0",
+    "@azure/core-client": "^1.6.1",
+    "@azure/core-paging": "^1.3.0",
+    "@azure/core-rest-pipeline": "^1.8.1",
+    "@azure/core-tracing": "^1.0.1",
+    "@azure/core-util": "^1.0.0",
+    "@azure/core-xml": "^1.3.0",
+    "@azure/logger": "^1.0.3",
+    "tslib": "^2.4.0"
+  },
+  "deprecated": false,
+  "description": "Azure Notification Hubs SDK for JavaScript",
   "devDependencies": {
     "@azure/dev-tool": "^1.0.0",
     "@azure/eslint-plugin-azure-sdk": "^3.0.0",
@@ -108,17 +91,66 @@
     "util": "^0.12.4",
     "uuid": "^8.3.2"
   },
-  "dependencies": {
-    "@azure/abort-controller": "^1.1.0",
-    "@azure/core-amqp": "^3.1.0",
-    "@azure/core-auth": "^1.4.0",
-    "@azure/core-client": "^1.6.1",
-    "@azure/core-paging": "^1.3.0",
-    "@azure/core-rest-pipeline": "^1.8.1",
-    "@azure/core-tracing": "^1.0.1",
-    "@azure/core-util": "^1.0.0",
-    "@azure/core-xml": "^1.3.0",
-    "@azure/logger": "^1.0.3",
-    "tslib": "^2.4.0"
-  }
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "files": [
+    "dist/",
+    "dist-esm/src/",
+    "types/src",
+    "types/latest/",
+    "types/3.1/",
+    "README.md",
+    "LICENSE"
+  ],
+  "homepage": "https://github.com/Azure/azure-sdk-for-js/blob/main/sdk/notificationhubs/notification-hubs/README.md",
+  "keywords": [
+    "azure",
+    "cloud",
+    "typescript"
+  ],
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist-esm/src/index.js",
+  "name": "@azure/notification-hubs",
+  "prettier": "@azure/eslint-plugin-azure-sdk/prettier.json",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Azure/azure-sdk-for-js.git"
+  },
+  "scripts": {
+    "audit": "node ../../../common/scripts/rush-audit.js && rimraf node_modules package-lock.json && npm i --package-lock-only 2>&1 && npm audit",
+    "build": "npm run build:test && api-extractor run --local && npm run build:types",
+    "build:samples": "echo Obsolete",
+    "build:test": "npm run clean && tsc -p . && dev-tool run bundle",
+    "build:types": "downlevel-dts types/latest/ types/3.1/",
+    "check-format": "prettier --list-different --config ../../../.prettierrc.json --ignore-path ../../../.prettierignore \"src/**/*.ts\" \"test/**/*.ts\" \"*.{js,json}\"",
+    "clean": "rimraf dist dist-* temp types *.tgz *.log",
+    "execute:samples": "dev-tool samples run samples-dev",
+    "extract-api": "tsc -p . && api-extractor run --local",
+    "format": "prettier --write --config ../../../.prettierrc.json --ignore-path ../../../.prettierignore \"src/**/*.ts\" \"test/**/*.ts\" \"samples-dev/**/*.ts\" \"*.{js,json}\"",
+    "integration-test": "npm run integration-test:node && npm run integration-test:browser",
+    "integration-test:browser": "echo skipped",
+    "integration-test:node": "nyc mocha -r esm --require source-map-support/register --reporter ../../../common/tools/mocha-multi-reporter.js --timeout 600000 --full-trace \"dist-esm/test/internal/**/*.spec.js\" \"dist-esm/test/public/**/*.spec.js\"",
+    "lint": "eslint README.md package.json api-extractor.json src test --ext .ts,.javascript,.js",
+    "lint:fix": "eslint README.md package.json api-extractor.json src test --ext .ts,.javascript,.js --fix --fix-type [problem,suggestion]",
+    "pack": "npm pack 2>&1",
+    "test": "npm run clean && tsc -p . && npm run unit-test:node && dev-tool run bundle && npm run unit-test:browser && npm run integration-test",
+    "test:browser": "npm run clean && npm run build:test && npm run integration-test:browser",
+    "test:node": "npm run clean && tsc -p . && npm run integration-test:node",
+    "unit-test": "npm run unit-test:node && npm run unit-test:browser",
+    "unit-test:browser": "echo skipped",
+    "unit-test:node": "mocha -r ts-node/register --timeout 1200000 --full-trace --exclude \"dist-esm/test/**/browser/*.spec.js\" \"dist-esm/test/internal/unit/{,!(browser)/**/}*.spec.js\" \"dist-esm/test/public/unit/{,!(browser)/**/}*.spec.js\""
+  },
+  "sdk-type": "client",
+  "sideEffects": false,
+  "types": "types/latest/notification-hubs.d.ts",
+  "typesVersions": {
+    "<3.6": {
+      "*": [
+        "types/3.1/notification-hubs.d.ts"
+      ]
+    }
+  },
+  "version": "1.0.0-beta.1"
 }
